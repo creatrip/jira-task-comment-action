@@ -43,7 +43,7 @@ runs:
 
     - name: Find Comment
       uses: peter-evans/find-comment@v2
-      if: success() && github.event.number && steps.find-jira-task.outputs.body
+      if: github.event.number && steps.find-jira-task.outputs.body
       id: fc
       with:
         issue-number: ${{ github.event.number }}
