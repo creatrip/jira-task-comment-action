@@ -31,7 +31,7 @@ runs:
           const taskRegexp = new RegExp(`${{ inputs.regexp }}`, 'gi');
           const result = `${{ steps.get-pr-title.outputs.title }}`.match(taskRegexp);
           if(!result){
-            core.notice('Not Found Matched Task Pattern')
+            core.warn('Not Found Matched Task Pattern')
             return;
           }
           const jiraURL = 'https://creatrip.atlassian.net/browse/'
