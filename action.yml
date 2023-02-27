@@ -18,10 +18,10 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Get PR title
-      id: get-pr-title
+    - name: Get PR Head Branch
+      id: get-pr-branch
       shell: bash
-      run: echo "title=${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
+      run: echo "branch=${{ github.github.pull_request.head.ref }}" >> $GITHUB_OUTPUT
 
     - name: Find jira task and make comment body
       id: find-jira-task
@@ -29,7 +29,7 @@ runs:
       with:
         script: |
           const taskRegexp = new RegExp(`${{ inputs.regexp }}`, 'gi');
-          const result = `${{ steps.get-pr-title.outputs.title }}`.match(taskRegexp);
+          const result = `${{ steps.get-pr-branch.outputs.branch }}`.match(taskRegexp);
           if(!result){
             core.notice('Not Found Matched Task Pattern')
             return;
