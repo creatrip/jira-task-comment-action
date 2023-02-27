@@ -21,7 +21,7 @@ runs:
     - name: Get PR Head Branch
       id: get-pr-branch
       shell: bash
-      run: echo "branch=${{ github.github.pull_request.head.ref }}" >> $GITHUB_OUTPUT
+      run: echo "branch=${{ github.pull_request.head.ref }}" >> $GITHUB_OUTPUT
 
     - name: Find jira task and make comment body
       id: find-jira-task
