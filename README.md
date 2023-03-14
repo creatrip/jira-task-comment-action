@@ -17,7 +17,7 @@ jobs:
 #        with:
 #          prefix: 'comment prefix'
 #          suffix: 'comment suffix'
-#          regexp default '(proxy|lan|com|travel)(\\s|-)(\\d+)' 
+#          regexp default '(proxy|lan|com|travel|stay)(\\s|-)(\\d+)' 
 #          regexp: 'override find task regexp'
 
 ```
