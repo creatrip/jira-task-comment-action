@@ -13,7 +13,7 @@ inputs:
   regexp:
     description: 'Task Pattern RegExp'
     required: false
-    default: '(proxy|lan|com|travel)(\\s|-)(\\d+)'
+    default: '(proxy|lan|com|travel|stay)(\\s|-)(\\d+)'
 
 runs:
   using: "composite"
